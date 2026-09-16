@@ -1,0 +1,11 @@
+# Copy to ~/.config/systemd/user/, then set your project and zone below.
+
+[Unit]
+Description=Watch GCP instances for state changes
+
+[Service]
+Environment=GCP_PROJECT=your-project
+Environment=GCP_ZONE=your-zone
+Type=oneshot
+ExecStart=%h/gcpwatch/venv/bin/python %h/gcpwatch/gcpwatch.py
+
